@@ -72,7 +72,7 @@
         <div>
           <span class="text">[[text]]</span>
           <template is="dom-if" if="[[policyLink]]">
-            <a href$="[[policyLink]]" class="policy-link">[[policyText]]</a>
+            <a href$="[[policyLink]]" target$=[[policyTarget]] class="policy-link">[[policyText]]</a>
           </template>
           <slot name="text" class="text"></slot>
           <slot name="policy-link" class="policy-link"></slot>
@@ -198,7 +198,10 @@
             type: Number,
             value: 0,
           },
-
+          policyTarget:{
+            type: String,
+            value: '_blank',
+          },
           _countryCodes: {
             type: Array,
             readOnly: true,
